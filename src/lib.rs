@@ -2,7 +2,7 @@ extern crate proc_macro;
 
 use proc_macro::TokenStream;
 use quote::{format_ident, quote};
-use syn::{parse_macro_input, parse_quote, Attribute, Ident, ItemFn, Meta, ReturnType, Type, Lit, Expr};
+use syn::{parse_macro_input, parse_quote, Attribute, Ident, ItemFn, Meta, ReturnType, Type, Expr};
 
 macro_rules! fb {
     // async blocks!
