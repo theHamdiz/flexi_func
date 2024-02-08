@@ -2,6 +2,18 @@
 name = "flexi_func"
 version = "0.1.0"
 edition = "2021"
+authors = ["Ahmad Hamdi"]
+description = """
+a Rust crate designed to supercharge your Rust programming experience with two powerful macros: ff (Flexi Func) and fb (Flexi Block) or (Function Builder) 🛠️.
+
+These macros are crafted to simplify and enhance the way you write synchronous and asynchronous code, making your Rust journey smoother and more efficient.
+"""
+categories = ["asynchronous", "development-tools::procedural-macro-helpers", "parsing", "rust-patterns", "network-programming"]
+license = "MIT"
+repository = "https://github.com/theHamdiz/flexi_func"
+license-file = "LICENSE.md"
+readme = "README.md"
+
 
 [dependencies]
 syn = { version = "1.0.109", features = ["full"] }
