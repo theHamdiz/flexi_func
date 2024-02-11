@@ -17,7 +17,7 @@ To start using **flexi_func** in your project, add it to your `Cargo.toml`:
 
 ```toml
 [dependencies]
-flexi_func = "0.2.2"
+flexi_func = "0.2.5"
 ```
 
 Then, import the macros in your Rust file:

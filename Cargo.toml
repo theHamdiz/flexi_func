@@ -1,6 +1,6 @@
 [package]
 name = "flexi_func"
-version = "0.2.4"
+version = "0.2.5"
 edition = "2021"
 authors = ["Ahmad Hamdi"]
 description = """
@@ -18,6 +18,6 @@ readme = "README.md"
 syn = { version = "1.0.109", features = ["full"] }
 quote = "1.0.9"
 proc-macro2 = "1.0.27"
-flexi_func_declarative = "0.2.4"
+flexi_func_declarative = "0.2.5"
 [lib]
 proc-macro = true
