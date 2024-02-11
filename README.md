@@ -7,8 +7,9 @@ These macros are crafted to simplify and enhance the way you write synchronous a
 
 ## 🎁 Features
 
-- **`ff` (Flexi Func)**: Automatically generates synchronous and asynchronous versions of your functions with optional custom error handling 🌟.
-- **`fb` (Flexi Block) *or* (Function Builder)**: Dynamically creates functions based on specified modes (`sync` or `async`), reducing the boilerplate for conditional function generation 🔄.
+- **`ff` (Flexi Func)**: Mark your async function with this proc macro first, with optional custom error handling 🌟.
+- **`fb!` (Flexi Block) *or* (Function Builder)**: Inside the sync function write down your (`sync` or `async`) versions using fb!  
+- **`fb!`** Reducing the boilerplate for conditional function generation 🔄.
 
 ## 🚀 Getting Started
 
@@ -16,7 +17,7 @@ To start using **flexi_func** in your project, add it to your `Cargo.toml`:
 
 ```toml
 [dependencies]
-flexi_func = "0.2.1"
+flexi_func = "0.2.2"
 ```
 
 Then, import the macros in your Rust file:
@@ -40,7 +41,8 @@ fn compute(data: Vec<u8>) -> Result<usize, MyError> {
 }
 ```
 
-This generates an asynchronous version `compute_async` alongside the original `compute` function.
+This generates an asynchronous version `compute_async` alongside the original `compute` function.  
+If you need to specify an async version of your code inside your sync function use the fb! declarative macro.
 
 ### 🐞 Custom Error Type
 
@@ -51,14 +53,14 @@ fn process(data: Vec<u8>) -> Result<usize, MyCustomError> {
 }
 ```
 
-### 🔄 `fb` - Flexi Block or Function Builder
+### 🔄 `fb!` - Flexi Block or Function Builder
 
-Create synchronous or asynchronous functions on the fly with `fb`, tailored to reduce redundancy and improve code clarity.
+Create asynchronous twin functions & code blocks on the fly with `fb!`, tailored to reduce redundancy and improve code clarity.
 
 #### ✅ Synchronous Function
 
 ```rust
-fb!("sync", greet, (name: String), -> String, {
+fb!(sync, greet, (name: String), -> String, {
     format!("Hello, {}", name)
 });
 ```
@@ -66,14 +68,14 @@ fb!("sync", greet, (name: String), -> String, {
 #### ⚡ Asynchronous Function
 
 ```rust
-fb!("async", fetch_data, (url: String), -> Result<String, reqwest::Error>, {
+fb!(async, fetch_data, (url: String), -> Result<String, reqwest::Error>, {
     // Async fetch operation
 });
 ```
 
 ## 💡 Advanced Tips
 
-- Use conditional compilation with `fb` to adaptively generate sync or async functions based on your application's needs 🎛️.
+- Use conditional compilation with `fb!` to adaptively generate sync or async functions based on your application's needs 🎛️.
 - Combine `ff` with Rust's powerful error handling to streamline async error management 🚦.
 
 ## 🐳 Contributing
