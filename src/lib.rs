@@ -6,8 +6,8 @@ use syn::{parse_macro_input,  ItemFn, ReturnType, AttributeArgs, NestedMeta, Met
 use flexi_func_declarative::fb;
 
 #[allow(unused_macros)]
-/// The `ff` macro (Flexi Function) simplifies the generation of both synchronous and asynchronous versions of a function in Rust.
-/// By transforming a synchronous function into both synchronous and asynchronous versions.
+/// The `ff` proc macro (Flexi Function) simplifies the generation of asynchronous versions of a synchronous function in Rust.
+/// By transforming a synchronous function into both synchronous and asynchronous versions, where the actual async stuff is included inside the fb! macro.
 ///
 /// This macro takes a synchronous function and generates an asynchronous version of it,
 /// alongside the original synchronous function. The asynchronous function is named by appending `_async` to the original function's name, unless an override is specified using the `async_fn_name` attribute. An optional custom error type for the async version can be specified with the `error_type` attribute.
@@ -20,7 +20,7 @@ use flexi_func_declarative::fb;
 /// # Usage
 ///
 /// ```
-/// use flexi_func::ff; // Assume your_crate is the name of the crate where the ff macro is defined.
+/// use flexi_func::ff;
 ///
 /// #[ff]
 /// fn example_sync(s: String) -> usize {
