@@ -18,6 +18,6 @@ readme = "README.md"
 syn = { version = "1.0.109", features = ["full"] }
 quote = "1.0.9"
 proc-macro2 = "1.0.27"
-flexi_func_declarative = { path = "../flexi_func_declarative" }
+flexi_func_declarative = { path = "../flexi_func_declarative", version = "0.1.0" }
 [lib]
 proc-macro = true
