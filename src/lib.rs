@@ -3,7 +3,6 @@ extern crate proc_macro;
 use proc_macro::TokenStream;
 use quote::{format_ident, quote};
 use syn::{parse_macro_input,  ItemFn, ReturnType, AttributeArgs, NestedMeta, Meta, Lit};
-use flexi_func_declarative::fb;
 
 #[allow(unused_macros)]
 /// The `ff` proc macro (Flexi Function) simplifies the generation of asynchronous versions of a synchronous function in Rust.

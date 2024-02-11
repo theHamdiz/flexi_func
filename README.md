@@ -17,7 +17,7 @@ To start using **flexi_func** in your project, add it to your `Cargo.toml`:
 
 ```toml
 [dependencies]
-flexi_func = "0.2.6"
+flexi_func = "0.2.7"
 ```
 
 Then, import the macros in your Rust file:
@@ -53,11 +53,14 @@ fn process(data: Vec<u8>) -> Result<usize, MyCustomError> {
 }
 ```
 
+
 ### 🔄 `fb!` - Flexi Block or Function Builder
 
-Create asynchronous twin functions & code blocks on the fly with `fb!`, tailored to reduce redundancy and improve code clarity.
+Enhance your Rust arsenal with `fb!`, a versatile macro designed to dynamically generate both synchronous and asynchronous functions or code blocks. This macro is engineered to minimize redundancy and elevate code clarity, offering a seamless way to craft adaptable code constructs.
 
 #### ✅ Synchronous Function
+
+Create a synchronous function with ease:
 
 ```rust
 fb!(sync, greet, (name: String), -> String, {
@@ -67,21 +70,69 @@ fb!(sync, greet, (name: String), -> String, {
 
 #### ⚡ Asynchronous Function
 
+Generate an asynchronous function for operations that require awaiting:
+
 ```rust
 fb!(async, fetch_data, (url: String), -> Result<String, reqwest::Error>, {
     // Async fetch operation
 });
 ```
 
+#### 🔄 Returning a Closure
+
+For scenarios where you need to capture the surrounding environment or defer execution:
+
+- **Async Closure**
+
+```rust
+let async_closure = fb!(async, closure, {
+    // Async code here
+});
+// Usage
+async_closure().await;
+```
+
+- **Sync Closure**
+
+```rust
+let sync_closure = fb!(sync, closure, {
+    // Sync code here
+});
+// Usage
+sync_closure();
+```
+
+#### 🚀 Immediate Execution
+
+Execute code blocks immediately, without the need to define a separate function:
+
+- **Async Block**
+
+```rust
+let result = fb!(async, execute, {
+    // Immediate async execution
+});
+// Await the block if necessary
+result.await;
+```
+
+- **Sync Block**
+
+```rust
+fb!(sync, execute, {
+    // Immediate sync execution
+});
+```
+
 ## 💡 Advanced Tips
 
-- Use conditional compilation with `fb!` to adaptively generate sync or async functions based on your application's needs 🎛️.
-- Combine `ff` with Rust's powerful error handling to streamline async error management 🚦.
+- Leverage `fb!` for conditional compilation to dynamically generate sync or async functions, tailoring your code to the application's needs 🎛️.
+- Enhance error management in async operations by combining `fb!` with Rust's robust error handling features 🚦.
 
 ## 🐳 Contributing
 
-Contributions are welcome! If you'd like to help improve **flexi_func**, please feel free to create issues or submit pull requests 🤝.
+We welcome contributions to make `fb!` even better. If you're interested in enhancing its functionality or have suggestions, feel free to open issues or submit pull requests 🤝. Your input is invaluable in evolving this tool.
 
 ## 📃 License
 
-This project is licensed under [MIT](LICENSE.md).
+This project is licensed under the [MIT License](LICENSE.md), fostering open collaboration and innovation.

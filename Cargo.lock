@@ -4,7 +4,7 @@ version = 3
 
 [[package]]
 name = "flexi_func"
-version = "0.2.6"
+version = "0.2.7"
 dependencies = [
  "flexi_func_declarative",
  "proc-macro2",
@@ -14,9 +14,9 @@ dependencies = [
 
 [[package]]
 name = "flexi_func_declarative"
-version = "0.2.6"
+version = "0.2.7"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "beeff87655ac13126c51ca9c11aa6b3079fd0084150d4217e77fa613d0b424d1"
+checksum = "c034886a7798c2e514cd76e1c6c8932fd6df2a47e33fe3d3f56c78152fd1035b"
 
 [[package]]
 name = "proc-macro2"
