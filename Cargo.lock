@@ -4,7 +4,7 @@ version = 3
 
 [[package]]
 name = "flexi_func"
-version = "0.2.1"
+version = "0.2.2"
 dependencies = [
  "flexi_func_declarative",
  "proc-macro2",
@@ -14,7 +14,7 @@ dependencies = [
 
 [[package]]
 name = "flexi_func_declarative"
-version = "0.1.0"
+version = "0.2.2"
 
 [[package]]
 name = "proc-macro2"
